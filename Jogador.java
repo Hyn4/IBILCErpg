@@ -1,1 +1,3 @@
-zxc
+public class Jogador{   
+    
+}
