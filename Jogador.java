@@ -5,7 +5,7 @@ public class Jogador extends Personagem{
 
     
     public Turno<String,Integer> turnoNoCombate(){
-        
+        TesteParaVerSeDa();
     }
     
     public Turno<String,String> turnoNoCombate(){
