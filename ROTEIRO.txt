@@ -1,0 +1,50 @@
+Historia:
+
+	-Prologo
+		-O reitor da UNESP vai cortar gastos pra UNESP Bauru ter sorvete de graca todo dia, entao declarou que 
+        deve ter apenas um curso no IBILCE, nisso, um jovem e corajoso computeiro se voluntaria para salvar seu curso. 
+        Para fazer isso ele precisa derrotar o representante de cada curso, fazendo aliados pelo caminho.
+	
+	-Jornada
+		-No DCCE, o coordenador do curso Alejandro diz que o jogador deve ir primeiramente para o arboreto, onde enfrentara 
+        o representante do curso da Biologia (tutorial). 
+
+		-apos derrota-lo, o jogador e guiado ao RU onde consegue um RU para se curar e tem a opcao de comprar uma marmita 
+        para se curar na luta. depois e guiado para a piramide mas antes 	de clicar, o jogador e avisado de algo estranho 
+        na piscina, onde encontra um item, o jogador e avisado que existem itens escondidos pelo campus que pode ajuda-lo na jornada,
+        finalmente acaba o tutorial e o jogador pode lutar contra a traducao.
+
+		-Depois de derrotar a traducao, o inimigo lamenta que quase derrotou a Fisica no bloco C, dando uma dica do proximo adversario
+        ,depois de derrotar a fisica, pergunta se foram as pessoas fofocando no coreto que falaram que estavam fracos
+
+        -Ao clicar no coreto, recebe um item e informacao que e essencial para derrotar a Letras e Pedagogia no bloco A, depois 
+        e guiado para a biblioteca, que com a senha pode comprar itens que serao necessarios para derrotar a engenharia no RA e
+        a quimica nos LABS
+
+        -apos conseguir os itens necessarios e derrotar a matematica, e anunciado que o reitor esta vindo para anunciar a comp
+        como o unico curso do IBILCE, nisso o coordenador da computacao Alejandro chama o jogador para o DCCE, onde e passada
+        a missao de derrotar o reitor com a arma suprema da computacao, que so sera passada se ganhar a luta contra o coordenador.
+
+        -Antes de um dos dois ser derrotado, a luta e interrompida pelo reitor que percebe o plano e muda de ideia, decidindo
+        eliminar o IBILCE como um todo, o coordenador da a arma suprema ao jogador que derrota o reitor e salva o IBILCE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aleardo guarda a arma mais poderosa do jogo no DCCE (nao e o final boss)
+
+Pra conseguir pocao de vida (RU) fazer um minigame q vai aparecer um botao rapidao escrito "reservar" e some, se conseguir clicar ganha uma pocao - (se der tempo)
+
