@@ -1,4 +1,4 @@
-public class Jogador extends Personagem{   
+public class Player extends Personagem{   
     private int experiencia; // mede o progresso ate subir de nivel
     private int nivel; //muda a forca e defesa base do jogador
 
