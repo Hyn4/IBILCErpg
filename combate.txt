@@ -1,0 +1,5 @@
+//de baixo pra cima
+Acoes do jogador (barra mais inferior): ATACAR ; HABILIDADE ; USAR ITEM ; DEFENDER.
+Barra acima das acoes: vida
+sprite do inimigo e pequena barra de vida
+nome do lugar. nome do inimigo
