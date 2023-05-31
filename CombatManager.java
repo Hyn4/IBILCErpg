@@ -2,6 +2,7 @@ public class CombatManager{
     private Jogador jogador;
     private Inimigo adversario;
     private boolean turno;
+    private Acao<String,Object> acao;
 
     public CombatManager(Jogador jogador, Inimigo adversario) {
         this.jogador = jogador;
@@ -15,13 +16,11 @@ public class CombatManager{
     
         while(jogador.estaVivo() && adversario.estaVivo()){
             if(turno){
-                int acao = jogador.turnoNoCombate();
-                if(acao != 0){ //se != 0, o turno foi uma acao externa
+                acao = jogador.turnoNoCombate();
+                adversario.reacaoInimigo(acao);
 
-                }
-                
             }else{
-                adversario.turnoNoCombate();
+                //acao do inimigo
             }
         }
 
@@ -31,7 +30,7 @@ public class CombatManager{
             //mensagem: "jogador" venceu a luta!
             jogador.receberExperiencia(adversario.getExpRecompensa());
         }else{
-
+            //jogador perdeu a luta.
         }
 
         //retornar ao mapa

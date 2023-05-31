@@ -1,29 +1,83 @@
 public class Jogador extends Personagem{   
-    private int progresso; //aumenta em 1 a cada ponto de progresso, controla qual inimigo pode lutar
     private int experiencia; // mede o progresso ate subir de nivel
     private int nivel; //muda a forca e defesa base do jogador
 
-    
-    public Turno<String,Integer> turnoNoCombate(){
-        
+    //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
+
+    public int getExperiencia() {
+        return experiencia;
     }
-    
-    public Turno<String,String> turnoNoCombate(){
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+    public int getNivel() {
+        return nivel;
+    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+   
+    public Acao<String,Object> turnoNoCombate(){
+        Acao<String,Object> turno = new Acao<String,Object>();
+        System.out.println("Turno do Jogador");
+        if(true){//action listener de clicar no botao de ataque
+            turno.setT("ATAQUE");
+            turno.setV((this.getAtaqueBase()*this.getMultiplicadorAtaque()));
+        }else if(true){//action listener de clicar no botao de defesa
+            turno.setT("DEFESA");
+            turno.setV(this.getDefesaBase()*this.getMultiplicadorDefesa());
+        }else if(true){//action listener de clicar no botao de habilidade
+            turno.setT("HABILIDADE");
+            turno.setV("EFEITO");//EFEITO DA HABILIDADE
+        }else if(true){//action listener de clicar no botao de item
+            turno.setT("ITEM");
+            turno.setV("EFEITO");//EFEITO DO ITEM
+        }
+
+        return turno;
+    }
+
+    public static void main(String[] args){
         
     }
     
 
     public void receberExperiencia(int experienca){
-        //mensagem: "jogador" recebeu x pontos de experiencia!
-        this.experiencia += experienca;
+        System.out.println("Jogador recebeu "+ experienca + " pontos de experiência!!!");
+        experienca += getExperiencia();
+        setExperiencia(experienca);
         subirDeNivel();
     }
 
     private void subirDeNivel(){
-
+        if(experiencia >= nivel*10){
+            System.out.println("Jogador subiu de nível!!!");
+            System.out.println("Vida Maxima aumentada para: "+ SubirDeNivelVida());
+            System.out.println("Ataque aumentado para: " + SubirDeNivelAtaque());
+            System.out.println("Defesa aumentada para: "+ SubirDeNivelDefesa());
+        }else{
+            System.out.println("Faltam " + getExperiencia()%10 + " pontos de experiência para subir de nível!");
+        }
     }
 
-    public class Turno<T,V>{
-
+    private int SubirDeNivelAtaque(){
+        int maisAtaque = this.getAtaqueBase();
+        maisAtaque++;
+        setAtaqueBase(maisAtaque);
+        return maisAtaque;
     }
+    private int SubirDeNivelDefesa(){
+        int maisDefesa = this.getDefesaBase();
+        maisDefesa++;
+        setDefesaBase(maisDefesa);
+        return maisDefesa;
+    }
+    private int SubirDeNivelVida(){
+        int maisVida = this.getVidaMaxima();
+        maisVida++;
+        setVidaMaxima(maisVida);
+        return maisVida;
+    }
+
+   
 }
