@@ -1,10 +1,10 @@
 public class CombatManager{
-    private Jogador jogador;
+    private Player jogador;
     private Inimigo adversario;
     private boolean turno;
     private Acao<String,Object> acao;
 
-    public CombatManager(Jogador jogador, Inimigo adversario) {
+    public CombatManager(Player jogador, Inimigo adversario) {
         this.jogador = jogador;
         this.adversario = adversario;
     }
