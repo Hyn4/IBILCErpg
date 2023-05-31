@@ -1,0 +1,36 @@
+Personagem: classe abstrata que representa um personagem no jogo, com atributos como nome, pontos de vida, nível, habilidades, entre outros.
+Jogador: classe que representa o jogador do jogo, estendendo a classe Personagem e adicionando métodos específicos, como ataque e defesa.
+Monstro: classe que representa um monstro no jogo, estendendo a classe Personagem e adicionando métodos específicos, como ataque e recompensa.
+Item classe abstrata que representa um item no jogo, com atributos como nome e descrição.
+Arma: classe que representa uma arma no jogo, estendendo a classe Item e adicionando atributos específicos, como dano.
+Armadura: classe que representa uma armadura no jogo, estendendo a classe Item e adicionando atributos específicos, como defesa.
+Inventario: classe que representa o inventário do jogador, com métodos para adicionar, remover e exibir itens.
+Mapa: classe que representa o mapa do jogo, com métodos para exibir o mapa e verificar a posição atual do jogador.
+
+
+
+Funcionalidades adicionais:
+
+Utilizar herança: A classe Jogador e Monstro herdam da classe Personagem.
+
+Utilizar interface: Pode ser criada uma interface para representar as habilidades dos personagens, como "Atacante" e "Defensor", que seriam implementadas pelas classes Jogador e Monstro.
+
+Salvar e ler dados de arquivos: Implementar métodos para salvar e ler os dados do jogador e do mapa em arquivos, como arquivos de texto.
+
+Utilizar conceito de Generics: Pode ser utilizado o conceito de Generics ao implementar coleções para o inventário e o mapa, permitindo armazenar diferentes tipos de itens e objetos no jogo.
+
+Utilizar conceito de Collections: Utilizar coleções como ArrayList para armazenar itens no inventário e criar uma lista de monstros no mapa.
+
+Tratamento de Exceções: Implementar tratamento de exceções em operações que possam gerar erros, como tentar adicionar um item duplicado no inventário ou tentar ler um arquivo inexistente.
+
+Encapsulamento: Utilizar modificadores de acesso (private, public, protected) para encapsular os atributos e métodos das classes.
+
+Polimorfismo ou sobrecarga: Utilizar polimorfismo ao chamar os métodos de ataque e defesa do jogador e monstro. Também é possível aplicar sobrecarga em métodos como "atacar" para permitir diferentes tipos de ataques.
+
+Interface gráfica: Implementar uma interface gráfica com pelo menos 3 telas, como tela de batalha, tela de inventário e tela de mapa.
+
+
+
+
+
+
