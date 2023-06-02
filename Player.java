@@ -51,12 +51,14 @@ public class Player extends Personagem{
 
     private void subirDeNivel(){
         if(experiencia >= nivel*10){
-            System.out.println("Jogador subiu de nível!!!");
+            this.setNivel(aumentarNivel());
+            System.out.println("Jogador subiu para o nivel " + getNivel() + "!!!");
             System.out.println("Vida Maxima aumentada para: "+ SubirDeNivelVida());
             System.out.println("Ataque aumentado para: " + SubirDeNivelAtaque());
             System.out.println("Defesa aumentada para: "+ SubirDeNivelDefesa());
+            if(experiencia >= nivel*10) subirDeNivel();
         }else{
-            System.out.println("Faltam " + getExperiencia()%10 + " pontos de experiência para subir de nível!");
+            System.out.println("Faltam " + (10 - getExperiencia()%10) + " pontos de experiência para subir de nível!");
         }
     }
 
@@ -78,6 +80,8 @@ public class Player extends Personagem{
         setVidaMaxima(maisVida);
         return maisVida;
     }
-
+    private int aumentarNivel(){
+        return this.getNivel()+1;
+    }
    
 }
