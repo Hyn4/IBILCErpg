@@ -18,7 +18,6 @@ public class CombatManager{
             if(turno){
                 acao = jogador.turnoNoCombate();
                 adversario.reacaoInimigo(acao);
-
             }else{
                 //acao do inimigo
             }
