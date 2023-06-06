@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Menu"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox alignment="CENTER" fillWidth="false" prefHeight="540.0" prefWidth="930.0" spacing="20.0" styleClass="bodybg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.FXController">
+   <Text fill="#e70808" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="IBILCE RPG" textAlignment="CENTER" textOrigin="TOP" wrappingWidth="534.0" VBox.vgrow="ALWAYS">
+      <effect>
+         <DropShadow height="119.26" radius="45.6775" width="65.45" />
+      </effect>
+      <font>
+         <Font name="SimSun-ExtB" size="12.0" />
+      </font>
+   </Text>
+    <Button fx:id="button_start" depthTest="DISABLE" mnemonicParsing="false" onAction="#onHelloButtonClick" pickOnBounds="false" styleClass="bodybg" stylesheets="@stylebutton.css" text="JOGAR" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+        <font>
+            <Font name="Comic Sans MS" size="25.0" />
+        </font>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <effect>
+         <DropShadow height="4.63" radius="2.9825" width="9.3">
+            <color>
+               <Color red="0.04210526496171951" green="0.001247563399374485" blue="0.001247563399374485" />
+            </color>
+         </DropShadow>
+      </effect>
+    </Button>
 
-</AnchorPane>
+
+    <Label fx:id="welcomeText" />
+    <Button mnemonicParsing="false" onAction="#onHelloButtonClick" styleClass="bodybg" stylesheets="@stylebutton.css" text="CRÉDITOS">
+      <font>
+         <Font name="Comic Sans MS" size="13.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <Button mnemonicParsing="false" styleClass="bodybg" stylesheets="@stylebutton.css" text="Button">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </Button>
+</VBox>

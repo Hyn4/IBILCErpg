@@ -23,6 +23,39 @@ Interface gráfica: Implementar uma interface gráfica com pelo menos 3 telas, c
 
 
 
+TELAS:
+
+MENU:
+Jogar
+Creditos
+Sair
+
+
+COMBATE:
+atacar
+defender
+Habilidade
+Item
+
+
+INVENTARIO:
+matriz de itens
+descricao em baixo dos itens
+stats na direita
+equipar em baixo na direita
+
+
+MAPA:
+imagem
+onde estamos
+caixa de texto
+ponto de interesse
+
+BOTAO
+salvar
+inventar
+ir
+sair
 
 
 

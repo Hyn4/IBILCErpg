@@ -1,0 +1,20 @@
+
+
+
+.bodybg{
+    -fx-background-image:url("\DSC_0085.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 930 540;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+@font-face {
+   font-family: "8 bit HUD Regular";
+   src: url(8-bit-hud.tff);
+}
+
+.text {
+   -fx-font-family: "8 bit HUD Regular";
+   -fx-font-style: bold;
+}
