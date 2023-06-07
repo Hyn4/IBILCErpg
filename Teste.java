@@ -6,11 +6,14 @@ public class Teste {
 
     public static void main(String[] args){
         Player jogador = new Player();
+        Inimigo adversario = new Inimigo();
+        CombatManager combate = new CombatManager(jogador, adversario);
         
-        while(exp != 0){
-            exp = scan.nextInt();
-            jogador.receberExperiencia(exp);
-        }     
+        
+        // while(exp != 0){
+        //     exp = scan.nextInt();
+        //     jogador.receberExperiencia(exp);
+        // }     
         
     }
 }

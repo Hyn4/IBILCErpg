@@ -1,9 +1,23 @@
 public class Player extends Personagem{   
     private int experiencia; // mede o progresso ate subir de nivel
     private int nivel; //muda a forca e defesa base do jogador
+    private Inventario inventario;
     
 
     //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
+    public Player(){
+        this.nivel = 1;
+        this.inventario = new Inventario();
+        this.experiencia = 0;
+        this.setAtaqueBase(7);
+        this.setDefesaBase(3);
+        this.setMultiplicadorAtaque(1);
+        this.setMultiplicadorDefesa(1);
+        this.setVidaMaxima(20);
+        this.setVidaAtual(20);
+        this.setVelocidade(10);
+        this.setVivo(true);
+    }
 
     public int getExperiencia() {
         return experiencia;
@@ -18,18 +32,21 @@ public class Player extends Personagem{
         this.nivel = nivel;
     }
    
+    @Override
     public Acao<String,Object> turnoNoCombate(){
         Acao<String,Object> turno = new Acao<String,Object>();
         System.out.println("Turno do Jogador");
         if(true){//action listener de clicar no botao de ataque
             turno.setT("ATAQUE");
             turno.setV((getAtaqueBase()*getMultiplicadorAtaque()));
+            System.out.println(turno.getT());
+           
         }else if(true){//action listener de clicar no botao de defesa
             turno.setT("DEFESA");
             turno.setV(getDefesaBase()*getMultiplicadorDefesa());
         }else if(true){//action listener de clicar no botao de habilidade
             turno.setT("HABILIDADE");
-            turno.setV("EFEITO");//EFEITO DA HABILIDADE
+            turno.setV(usarHabilidade());//EFEITO DA HABILIDADE
 
             acaoPropria(turno);
         }else if(true){//action listener de clicar no botao de item
@@ -67,7 +84,14 @@ public class Player extends Personagem{
         ativarHabilidadePassiva();
     }
 
-    private void ativarHabilidadePassiva(){//N TA FEITO
+    private Acao<String,Object> usarHabilidade(){
+        Acao<String,Object> efeito =  inventario.getHabilidadeEquipada().habilidade();
+        //SE O EFEITO FOR PROPRIO, ESSA FUNCAO TEM Q RETORNAR NULO!!!
+    
+        return null;
+    }
+
+    public void ativarHabilidadePassiva(){//N TA FEITO
 
     }
 
@@ -111,6 +135,23 @@ public class Player extends Personagem{
     }
     private int aumentarNivel(){
         return this.getNivel()+1;
+    }
+
+    public void desativarHabilidadePassiva() {
+    }
+
+    public void reacaoJogador(Acao<String,Object> acao){
+        switch(acao.getT()){
+            case "ATAQUE": 
+                receberDano((Float)acao.getV());
+                break;
+        }
+        
+    }
+    @Override
+    public int receberDano(float dano){
+        System.out.println("Dano ao jogador: " + super.receberDano(dano));
+        return Math.round(dano);
     }
    
 }

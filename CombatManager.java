@@ -7,22 +7,30 @@ public class CombatManager{
     public CombatManager(Player jogador, Inimigo adversario) {
         this.jogador = jogador;
         this.adversario = adversario;
+        iniciarCombate();
     }
 
     public void iniciarCombate(){
+        jogador.ativarHabilidadePassiva();
         if(jogador.getVelocidade() >= adversario.getVelocidade()){
             turno = true;
         }
-    
+        
         while(jogador.estaVivo() && adversario.estaVivo()){
+            System.out.println("Vida do jogador: " + jogador.getVidaAtual());
+            System.out.println("Vida do adversario: " + adversario.getVidaAtual());
+
             if(turno){
                 acao = jogador.turnoNoCombate();
                 adversario.reacaoInimigo(acao);
+                turno = false;
             }else{
-                //acao do inimigo
+                acao = adversario.turnoNoCombate();
+                jogador.reacaoJogador(acao);
+                turno = true;
             }
         }
-
+        jogador.desativarHabilidadePassiva();
 
         //SE COLOCAR A OPCAO DE CORRER, TEM QUE MUDAR ESSE IF TAMBEM!!!
         if(jogador.estaVivo()){

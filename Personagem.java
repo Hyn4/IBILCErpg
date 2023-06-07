@@ -66,8 +66,20 @@ public class Personagem {
         return velocidade;
     }
     public boolean estaVivo(){
+        if(getVidaAtual()<=0) setVivo(false);
         return vivo;
     }
 
+    public Acao<String,Object> turnoNoCombate(){
+        return null;
+    }
+
+    public int receberDano(float danoPuro){
+        
+        float dano = danoPuro - ((Float)(getDefesaBase()*getMultiplicadorDefesa()));
+        if(dano < 0 ) dano = 0;
+        setVidaAtual(getVidaAtual()-Math.round(dano));
+        return Math.round(dano);
+    }
 
 }
