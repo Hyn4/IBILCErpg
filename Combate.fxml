@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane prefHeight="540.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Combate">
+   <children>
+      <ButtonBar layoutX="-1.0" layoutY="465.0" prefHeight="74.0" prefWidth="930.0">
+        <buttons>
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="930.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="200.0" text="ATACAR" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="232.5" text="DEFENDER" />
+                  <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="232.5" text="HABILIDADE" />
+                  <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="232.5" text="ITEM" />
+               </children>
+            </HBox>
+        </buttons>
+      </ButtonBar>
+      <AnchorPane layoutX="364.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" styleClass="bodybg" stylesheets="@styleinimigo.css" />
+      <ProgressBar layoutX="303.0" layoutY="40.0" prefHeight="18.0" prefWidth="322.0" progress="0.0" />
+      <TextArea layoutX="14.0" layoutY="307.0" prefHeight="144.0" prefWidth="590.0" text="O INIMIGO ALEJANDRO" />
+      <TextArea layoutX="716.0" layoutY="14.0" prefHeight="294.0" prefWidth="200.0" text="VIDA:50                           ATAQUE:100                         DEFEA:1203123" wrapText="true" />
+   </children>
+</AnchorPane>

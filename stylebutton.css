@@ -1,4 +1,8 @@
 
-.bodybg{
-    -fx-background-color: transparent;
+@font-face {
+  src: url("/resources/8-bit-hud.ttf");
+}
+
+.label {
+  -fx-font-family: "8-bit HUD Regular";
 }

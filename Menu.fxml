@@ -4,55 +4,77 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" fillWidth="false" prefHeight="540.0" prefWidth="930.0" spacing="20.0" styleClass="bodybg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.FXController">
-   <Text fill="#e70808" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="IBILCE RPG" textAlignment="CENTER" textOrigin="TOP" wrappingWidth="534.0" VBox.vgrow="ALWAYS">
-      <effect>
-         <DropShadow height="119.26" radius="45.6775" width="65.45" />
-      </effect>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0"
+            prefWidth="930.0" styleClass="bodybg2" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.FXController">
+   <VBox prefHeight="200.0" prefWidth="100.0"/>
+   <Button fx:id="jogarButton" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" depthTest="ENABLE"
+           layoutX="343.0" layoutY="247.0" mnemonicParsing="false" onAction="#jogarButtonClick" pickOnBounds="false"
+           prefHeight="101.0" prefWidth="279.0" text="JOGAR" textAlignment="CENTER" textFill="WHITE"
+           textOverrun="WORD_ELLIPSIS">
       <font>
-         <Font name="SimSun-ExtB" size="12.0" />
+         <Font name="8-bit HUD Regular" size="13.0"/>
       </font>
-   </Text>
-    <Button fx:id="button_start" depthTest="DISABLE" mnemonicParsing="false" onAction="#onHelloButtonClick" pickOnBounds="false" styleClass="bodybg" stylesheets="@stylebutton.css" text="JOGAR" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
-        <font>
-            <Font name="Comic Sans MS" size="25.0" />
-        </font>
       <opaqueInsets>
-         <Insets />
+         <Insets/>
       </opaqueInsets>
       <cursor>
-         <Cursor fx:constant="HAND" />
+         <Cursor fx:constant="HAND"/>
       </cursor>
       <effect>
-         <DropShadow height="4.63" radius="2.9825" width="9.3">
-            <color>
-               <Color red="0.04210526496171951" green="0.001247563399374485" blue="0.001247563399374485" />
-            </color>
-         </DropShadow>
+         <Lighting diffuseConstant="1.26" specularConstant="0.0" specularExponent="0.55" surfaceScale="2.51">
+            <bumpInput>
+               <Shadow/>
+            </bumpInput>
+         </Lighting>
       </effect>
-    </Button>
-
-
-    <Label fx:id="welcomeText" />
-    <Button mnemonicParsing="false" onAction="#onHelloButtonClick" styleClass="bodybg" stylesheets="@stylebutton.css" text="CRÉDITOS">
+   </Button>
+   <Label fx:id="welcomeText" layoutX="305.0" layoutY="349.0" prefHeight="18.0" prefWidth="353.0" textFill="WHITE"/>
+   <Button fx:id="creditosButton" blendMode="HARD_LIGHT" layoutX="447.0" layoutY="366.0" mnemonicParsing="false"
+           onAction="#creditosButtonClick" stylesheets="@stylebutton.css" text="CRÉDITOS">
       <font>
-         <Font name="Comic Sans MS" size="13.0" />
+         <Font name="8-bit HUD Regular" size="13.0"/>
       </font>
       <cursor>
-         <Cursor fx:constant="HAND" />
-      </cursor></Button>
-   <Button mnemonicParsing="false" styleClass="bodybg" stylesheets="@stylebutton.css" text="Button">
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-      <VBox.margin>
-         <Insets />
-      </VBox.margin>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <effect>
+         <Lighting>
+            <bumpInput>
+               <Shadow/>
+            </bumpInput>
+         </Lighting>
+      </effect>
    </Button>
-</VBox>
+   <Button fx:id="sairButton" blendMode="HARD_LIGHT" layoutX="465.0" layoutY="450.0" mnemonicParsing="false"
+           onAction="#sairButtonClick" stylesheets="@stylebutton.css" text="Sair" textAlignment="CENTER"
+           wrapText="true">
+      <font>
+         <Font name="8-bit HUD Regular" size="13.0"/>
+      </font>
+      <opaqueInsets>
+         <Insets/>
+      </opaqueInsets>
+      <effect>
+         <Lighting diffuseConstant="0.87" specularConstant="0.36" specularExponent="6.24" surfaceScale="1.77">
+            <bumpInput>
+               <Shadow/>
+            </bumpInput>
+         </Lighting>
+      </effect>
+   </Button>
+   <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
+         prefWidth="930.0">
+      <children>
+         <AnchorPane blendMode="SRC_ATOP" depthTest="DISABLE" prefHeight="249.0" prefWidth="730.0" styleClass="bodybg"
+                     stylesheets="@style.css"/>
+      </children>
+   </HBox>
+</AnchorPane>
