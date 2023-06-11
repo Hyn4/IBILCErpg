@@ -22,7 +22,7 @@
             </HBox>
         </buttons>
       </ButtonBar>
-      <AnchorPane layoutX="364.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" styleClass="bodybg" stylesheets="@styleinimigo.css" />
+      <AnchorPane layoutX="364.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" styleClass="bodybg" stylesheets="@../styleinimigo.css" />
       <ProgressBar layoutX="303.0" layoutY="40.0" prefHeight="18.0" prefWidth="322.0" progress="0.0" />
       <TextArea layoutX="14.0" layoutY="307.0" prefHeight="144.0" prefWidth="590.0" text="O INIMIGO ALEJANDRO" />
       <TextArea layoutX="716.0" layoutY="14.0" prefHeight="294.0" prefWidth="200.0" text="VIDA:50                           ATAQUE:100                         DEFEA:1203123" wrapText="true" />

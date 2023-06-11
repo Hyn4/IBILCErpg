@@ -2,7 +2,7 @@
 
 
 .bodybg{
-    -fx-background-image:url("\logojogo.jpg");
+    -fx-background-image:url("\Files\logojogo.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 730 230;
     -fx-background-position: top center;
@@ -17,5 +17,5 @@
 
 
 .text {
-   -fx-font-family: "8 bit HUD Regular";
+   -fx-font-family: "8-bit HUD Regular";
 }

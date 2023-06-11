@@ -6,29 +6,27 @@ import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Objects;
 
-public class MAIN extends Application {
+public class MainJogo extends Application {
 
     @Override
     public void start(@NotNull Stage stage) throws IOException {
-        Font.loadFont(getClass().getResourceAsStream("/resources/8-bit-hud.ttf"), 78);
-
-
-
-
-        FXMLLoader fxmlLoader = new FXMLLoader(MAIN.class.getResource("Menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 930, 540);
-        scene.getStylesheets().addAll(Objects.requireNonNull(this.getClass().getResource("stylebutton.css")).toExternalForm());
+        Font.loadFont(getClass().getResourceAsStream("/Files/8_bit_hud.ttf"), 78);
+        FXMLLoader fxmlLoader = new FXMLLoader(MainJogo.class.getResource("JavaFX/Menu/Menu.fxml"));
+        Scene sceneMenu = new Scene(fxmlLoader.load(), 930, 540);
+        sceneMenu.getStylesheets().addAll(Objects.requireNonNull(this.getClass().getResource("JavaFX/stylebutton.css")).toExternalForm());
         stage.setTitle("IbilceRPG");
+        stage.setScene(sceneMenu);
         stage.setResizable(false);
-        stage.setScene(scene);
         stage.show();
 
     }
+
+
     public static void main(String[] args){
         launch();
+
     }
 
 

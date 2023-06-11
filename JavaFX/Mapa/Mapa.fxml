@@ -15,7 +15,7 @@
       <Button layoutX="644.0" layoutY="422.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="Inventario" />
       <ImageView fitHeight="400.0" fitWidth="614.0" layoutX="11.0" layoutY="15.0" pickOnBounds="true">
          <image>
-            <Image url="@ibilce.jpg" />
+            <Image url="@../../Files/ibilce.jpg" />
          </image>
       </ImageView>
       <TextArea layoutX="630.0" layoutY="17.0" prefHeight="400.0" prefWidth="286.0" text="Personagem: Mateus                                                                    Hp: 50" wrapText="true" />

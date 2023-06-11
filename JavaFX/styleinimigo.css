@@ -2,7 +2,7 @@
 
 
 .bodybg{
-    -fx-background-image:url("\AleardoManacero.jpg");
+    -fx-background-image:url("\Files\AleardoManacero.jpg");
     -fx-background-repeat: stretch;
     -fx-background-size: 200 200;
     -fx-background-position: top center;
