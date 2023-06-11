@@ -6,6 +6,15 @@ public class Personagem {
 
     private int vidaMaxima;
     private int vidaAtual;
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
+    }
+    public void setVidaAtual(int vidaAtual) {
+        this.vidaAtual = vidaAtual;
+    }
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
     private int ataqueBase = 1;
     private int defesaBase;
     private int velocidade;

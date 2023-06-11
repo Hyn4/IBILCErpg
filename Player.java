@@ -1,6 +1,7 @@
 public class Player extends Personagem{   
     private int experiencia; // mede o progresso ate subir de nivel
     private int nivel; //muda a forca e defesa base do jogador
+    
 
     //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
 
@@ -20,28 +21,55 @@ public class Player extends Personagem{
     public Acao<String,Object> turnoNoCombate(){
         Acao<String,Object> turno = new Acao<String,Object>();
         System.out.println("Turno do Jogador");
-        int opt=0;
-        if(opt==0){//action listener de clicar no botao de ataque
+        if(true){//action listener de clicar no botao de ataque
             turno.setT("ATAQUE");
-            turno.setV((this.getAtaqueBase()*this.getMultiplicadorAtaque()));
-        }else if(opt == 1){//action listener de clicar no botao de defesa
+            turno.setV((getAtaqueBase()*getMultiplicadorAtaque()));
+        }else if(true){//action listener de clicar no botao de defesa
             turno.setT("DEFESA");
-            turno.setV(this.getDefesaBase()*this.getMultiplicadorDefesa());
-        }else if(opt == 2){//action listener de clicar no botao de habilidade
+            turno.setV(getDefesaBase()*getMultiplicadorDefesa());
+        }else if(true){//action listener de clicar no botao de habilidade
             turno.setT("HABILIDADE");
             turno.setV("EFEITO");//EFEITO DA HABILIDADE
-        }else if(opt == 3){//action listener de clicar no botao de item
+
+            acaoPropria(turno);
+        }else if(true){//action listener de clicar no botao de item
             turno.setT("ITEM");
             turno.setV("EFEITO");//EFEITO DO ITEM
+
+            acaoPropria(turno);
         }
 
         return turno;
     }
 
-    public static void main(String[] args){
-        
+    private void acaoPropria(Acao<String,Object> turno){//n ta pronto
+
+        switch(turno.getT()){
+            case "HABILIDADE":
+                //chama outra funcao pra n desorganizar
+                break;
+            case "ITEM":
+                if((String)turno.getV() == "RU"){
+
+                }else if((String)turno.getV() == "Xepa"){
+
+                }
+                break;
+        }
+
     }
-    
+
+    public void iniciarCombate(){
+        setVidaAtual(getVidaMaxima());
+        setMultiplicadorAtaque(1);
+        setMultiplicadorDefesa(1);
+        setVivo(true);
+        ativarHabilidadePassiva();
+    }
+
+    private void ativarHabilidadePassiva(){//N TA FEITO
+
+    }
 
     public void receberExperiencia(int experienca){
         System.out.println("Jogador recebeu "+ experienca + " pontos de experiência!!!");
@@ -52,12 +80,14 @@ public class Player extends Personagem{
 
     private void subirDeNivel(){
         if(experiencia >= nivel*10){
-            System.out.println("Jogador subiu de nível!!!");
+            this.setNivel(aumentarNivel());
+            System.out.println("Jogador subiu para o nivel " + getNivel() + "!!!");
             System.out.println("Vida Maxima aumentada para: "+ SubirDeNivelVida());
             System.out.println("Ataque aumentado para: " + SubirDeNivelAtaque());
             System.out.println("Defesa aumentada para: "+ SubirDeNivelDefesa());
+            if(experiencia >= nivel*10) subirDeNivel();
         }else{
-            System.out.println("Faltam " + getExperiencia()%10 + " pontos de experiência para subir de nível!");
+            System.out.println("Faltam " + (10 - getExperiencia()%10) + " pontos de experiência para subir de nível!");
         }
     }
 
@@ -79,6 +109,8 @@ public class Player extends Personagem{
         setVidaMaxima(maisVida);
         return maisVida;
     }
-
+    private int aumentarNivel(){
+        return this.getNivel()+1;
+    }
    
 }
