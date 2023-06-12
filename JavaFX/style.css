@@ -14,7 +14,9 @@
     -fx-background-color: black;
 }
 
-
+textarea {
+  color: #fff;
+    }
 
 .text {
    -fx-font-family: "8-bit HUD Regular";
