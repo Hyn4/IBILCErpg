@@ -23,13 +23,12 @@ public class FXInventarioController {
 
     @FXML
     public void sairButtonClick(ActionEvent event) throws IOException {
-        Parent menu =
-                FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Menu/Menu.fxml")));
-        Scene menuScene = new Scene(menu);
+        Parent mapa = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Mapa/Mapa.fxml")));
+        Scene mapaScene = new Scene(mapa);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(menuScene);
-        window.setTitle("IbilceRPG");
+        window.setScene(mapaScene);
+        window.setTitle("Mapa");
         window.show();
     }
 
