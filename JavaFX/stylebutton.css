@@ -1,7 +1,4 @@
 
-@font-face {
-  src: url("/Files/8_bit_hud.ttf");
-}
 
 .label {
   -fx-font-family: "8-bit HUD Regular";

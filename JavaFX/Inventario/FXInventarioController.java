@@ -15,14 +15,14 @@ import java.util.Objects;
 
 public class FXInventarioController {
     @FXML
-    public Button sairButton;
+    public Button voltarButton;
     @FXML
     public Button equiparButton;
     @FXML
     public Button desequiparButton;
 
     @FXML
-    public void sairButtonClick(ActionEvent event) throws IOException {
+    public void voltarButtonClick(ActionEvent event) throws IOException {
         Parent mapa = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Mapa/Mapa.fxml")));
         Scene mapaScene = new Scene(mapa);
 

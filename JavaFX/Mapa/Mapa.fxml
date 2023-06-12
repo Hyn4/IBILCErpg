@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="540.0" prefWidth="930.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Mapa.FXMapaController">
+<AnchorPane prefHeight="540.0" prefWidth="930.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/" fx:controller="JavaFX.Mapa.FXMapaController">
     <TextArea editable="false" focusTraversable="false" layoutX="11.0" layoutY="420.0" mouseTransparent="true" prefHeight="106.0" prefWidth="610.0" style="-fx-control-inner-background:#000000; -fx-font-family: Consolas; -fx-highlight-fill: #ffffff; -fx-highlight-text-fill: #ffffff; -fx-text-fill: #ffffff; " />
 
     <ImageView fitHeight="400.0" fitWidth="614.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">

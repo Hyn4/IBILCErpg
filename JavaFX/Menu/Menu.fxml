@@ -3,72 +3,79 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="930.0" styleClass="bodybg2" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml" fx:controller="JavaFX.Menu.FXController">
-   <VBox alignment="CENTER" layoutX="439.0" prefHeight="540.0" prefWidth="930.0" spacing="40.0"
-         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-         AnchorPane.topAnchor="150.0">
-      <Button fx:id="jogarButton" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" depthTest="ENABLE"
-              mnemonicParsing="false" onAction="#jogarButtonClick" pickOnBounds="false" prefHeight="101.0"
-              prefWidth="279.0" text="JOGAR" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="930.0" styleClass="bodybg2" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.Menu.FXController">
+   <AnchorPane layoutX="288.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <ImageView fitHeight="213.0" fitWidth="392.0" layoutX="-14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../Files/logojogo.jpg" />
+            </image>
+         </ImageView>
+      </children>
+   </AnchorPane>
+   <VBox alignment="CENTER" layoutX="451.0" prefHeight="540.0" prefWidth="930.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+      <Button fx:id="jogarButton" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" depthTest="ENABLE" mnemonicParsing="false" onAction="#jogarButtonClick" pickOnBounds="false" prefHeight="80.0" prefWidth="240.0" text="JOGAR" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
-            <Font name="8-bit HUD Regular" size="13.0"/>
+            <Font name="8-bit HUD Regular" size="13.0" />
          </font>
          <opaqueInsets>
-            <Insets/>
+            <Insets />
          </opaqueInsets>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <Lighting diffuseConstant="1.26" specularConstant="0.0" specularExponent="0.55" surfaceScale="2.51">
+            <Lighting diffuseConstant="1.03" specularConstant="0.13" specularExponent="6.79" surfaceScale="3.15">
                <bumpInput>
-                  <Shadow/>
+                  <Shadow />
                </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
             </Lighting>
          </effect>
       </Button>
-      <Button fx:id="creditosButton" blendMode="HARD_LIGHT" mnemonicParsing="false" onAction="#creditosButtonClick"
-              stylesheets="@../stylebutton.css" text="CREDITOS" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="creditosButton" blendMode="HARD_LIGHT" mnemonicParsing="false" onAction="#creditosButtonClick" prefHeight="70.0" prefWidth="150.0" stylesheets="@../stylebutton.css" text="CREDITOS" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="8-bit HUD Regular" size="13.0"/>
+            <Font name="8-bit HUD Regular" size="13.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
             <Lighting>
                <bumpInput>
-                  <Shadow/>
+                  <Shadow />
                </bumpInput>
             </Lighting>
          </effect>
          <opaqueInsets>
-            <Insets/>
+            <Insets />
          </opaqueInsets>
       </Button>
-      <Button fx:id="sairButton" blendMode="HARD_LIGHT" mnemonicParsing="false" onAction="#sairButtonClick"
-              stylesheets="@../stylebutton.css" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="sairButton" blendMode="HARD_LIGHT" mnemonicParsing="false" onAction="#sairButtonClick" prefHeight="50.0" prefWidth="120.0" stylesheets="@../stylebutton.css" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="8-bit HUD Regular" size="13.0"/>
+            <Font name="8-bit HUD Regular" size="13.0" />
          </font>
          <opaqueInsets>
-            <Insets/>
+            <Insets />
          </opaqueInsets>
          <effect>
             <Lighting diffuseConstant="0.87" specularConstant="0.36" specularExponent="6.24" surfaceScale="1.77">
                <bumpInput>
-                  <Shadow/>
+                  <Shadow />
                </bumpInput>
             </Lighting>
          </effect>
       </Button>
    </VBox>
-   <Label fx:id="welcomeText" layoutX="305.0" layoutY="349.0" prefHeight="18.0" prefWidth="353.0" textFill="WHITE" />
 </AnchorPane>
