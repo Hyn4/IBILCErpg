@@ -1,6 +1,6 @@
 public class Inimigo extends Personagem{
     private int expRecompensa;
-    private int debuffDano;//reduz o dano do proximo ataque do inimigo quando o jogador usa a acao defesa
+    private float debuffDano;//reduz o dano do proximo ataque do inimigo quando o jogador usa a acao defesa
 
     public Inimigo(){
         this.setAtaqueBase(5);
@@ -11,14 +11,14 @@ public class Inimigo extends Personagem{
         this.setVidaMaxima(20);
         this.setVidaAtual(20);
         this.setVivo(true);
-        this.setDebuffDano(0);
+        this.setDebuffDano(1);
         this.expRecompensa = 10;
     }
 
-    public int getDebuffDano() {
+    public float getDebuffDano() {
         return debuffDano;
     }
-    public void setDebuffDano(int debuffDano) {
+    public void setDebuffDano(float debuffDano) {
         this.debuffDano = debuffDano;
     }
     public int getExpRecompensa() {
@@ -37,23 +37,24 @@ public class Inimigo extends Personagem{
                 receberDano((Float)acao.getV());
                 break;
             case "DEFESA":
-                setDebuffDano((int)acao.getV());
+                setDebuffDano((Float)acao.getV());
                 break;
             case "HABILIDADE":
                 if(acao.getV() != null){//se for nulo, a hablidade foi acao propria do jogador
                     Acao<String,Object> efeitoHabilidade = (Acao<String,Object>)acao.getV();
                     switch(efeitoHabilidade.getT()){
                         case "REDUCAO_DE_DEFESA":
-                            setMultiplicadorDefesa((float)efeitoHabilidade.getV());
+                            setMultiplicadorDefesa((Float)efeitoHabilidade.getV());
+                            System.out.println("Defesa do adversario diminuida pela metade!!!");
                             break;
                         case "DANO":
-                            receberDano((int)efeitoHabilidade.getV());
+                            receberDano((Float)efeitoHabilidade.getV());
                             break;
                         case "REDUCAO_DE_DANO":
-                            setMultiplicadorAtaque((float)efeitoHabilidade.getV());
+                            setMultiplicadorAtaque((Float)efeitoHabilidade.getV());
                             break;
-                        //mais habilidades    
-                    }   
+                        //mais habilidades
+                    }
                 }
             
                 break;
@@ -64,13 +65,5 @@ public class Inimigo extends Personagem{
         }
     }
 
-    @Override
-    public Acao<String,Object> turnoNoCombate(){
-        Acao<String,Object> turno = new Acao<String,Object>();
-        System.out.println("Turno do Adversario");
-        turno.setT("ATAQUE");
-        turno.setV((getAtaqueBase()*getMultiplicadorAtaque())-getDebuffDano());
-        System.out.println(turno.getT());
-        return turno;
-    }
+   
 }

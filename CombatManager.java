@@ -12,6 +12,7 @@ public class CombatManager{
 
     public void iniciarCombate(){
         jogador.ativarHabilidadePassiva();
+        jogador.getInventario().getHabilidadeEquipada().reiniciarRecarga();
         if(jogador.getVelocidade() >= adversario.getVelocidade()){
             turno = true;
         }
@@ -24,6 +25,7 @@ public class CombatManager{
                 acao = jogador.turnoNoCombate();
                 adversario.reacaoInimigo(acao);
                 turno = false;
+                jogador.getInventario().getHabilidadeEquipada().decrementarRecarga();//diminui o tempo de recarga da habilidada em 1
             }else{
                 acao = adversario.turnoNoCombate();
                 jogador.reacaoJogador(acao);

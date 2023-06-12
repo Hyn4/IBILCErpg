@@ -77,7 +77,7 @@ public class Personagem {
     public int receberDano(float danoPuro){
         
         float dano = danoPuro - ((Float)(getDefesaBase()*getMultiplicadorDefesa()));
-        if(dano < 0 ) dano = 0;
+        if(dano < 0 ) dano = 0f;
         setVidaAtual(getVidaAtual()-Math.round(dano));
         return Math.round(dano);
     }

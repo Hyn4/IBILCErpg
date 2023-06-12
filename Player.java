@@ -1,7 +1,10 @@
+import java.util.Scanner;
+
 public class Player extends Personagem{   
     private int experiencia; // mede o progresso ate subir de nivel
     private int nivel; //muda a forca e defesa base do jogador
     private Inventario inventario;
+    private Scanner input = new Scanner(System.in);
     
 
     //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
@@ -19,6 +22,9 @@ public class Player extends Personagem{
         this.setVivo(true);
     }
 
+    public Inventario getInventario() {
+        return inventario;
+    }
     public int getExperiencia() {
         return experiencia;
     }
@@ -35,26 +41,40 @@ public class Player extends Personagem{
     @Override
     public Acao<String,Object> turnoNoCombate(){
         Acao<String,Object> turno = new Acao<String,Object>();
-        System.out.println("Turno do Jogador");
-        if(true){//action listener de clicar no botao de ataque
-            turno.setT("ATAQUE");
-            turno.setV((getAtaqueBase()*getMultiplicadorAtaque()));
-            System.out.println(turno.getT());
-           
-        }else if(true){//action listener de clicar no botao de defesa
-            turno.setT("DEFESA");
-            turno.setV(getDefesaBase()*getMultiplicadorDefesa());
-        }else if(true){//action listener de clicar no botao de habilidade
-            turno.setT("HABILIDADE");
-            turno.setV(usarHabilidade());//EFEITO DA HABILIDADE
-
-            acaoPropria(turno);
-        }else if(true){//action listener de clicar no botao de item
-            turno.setT("ITEM");
-            turno.setV("EFEITO");//EFEITO DO ITEM
-
-            acaoPropria(turno);
+        System.out.println("Turno do Jogador, selecione 1 para atacar, 2 para defender e 3 para usar habilidade");
+        String op = input.nextLine();
+        switch(op){
+            case "1":
+                turno.setT("ATAQUE");
+                turno.setV((getAtaqueBase()*getMultiplicadorAtaque()));
+                System.out.println(turno.getT());
+                break;
+            case "2":
+                turno.setT("DEFESA");
+                turno.setV(0.75f-(getNivel()/50));
+                System.out.println(turno.getT());
+                break;
+            case "3":
+                if(inventario.getHabilidadeEquipada().checarTempoDeRecarga()){
+                    turno.setV(usarHabilidade());
+                }else{
+                    return turnoNoCombate();
+                }
+                turno.setT("HABILIDADE");
+                System.out.println(turno.getT());
+                acaoPropria(turno);
+                break;
         }
+
+            
+
+
+
+            // turno.setT("ITEM");
+            // turno.setV("EFEITO");//EFEITO DO ITEM
+
+            // acaoPropria(turno);
+        
 
         return turno;
     }
@@ -85,7 +105,9 @@ public class Player extends Personagem{
     }
 
     private Acao<String,Object> usarHabilidade(){
-        Acao<String,Object> efeito =  inventario.getHabilidadeEquipada().habilidade();
+        Acao<String,Object> efeito =  inventario.getHabilidadeEquipada().getEfeito();
+        inventario.getHabilidadeEquipada().ativarRecarga();
+        if(efeito.getT() == "DANO") return efeito;
         //SE O EFEITO FOR PROPRIO, ESSA FUNCAO TEM Q RETORNAR NULO!!!
     
         return null;

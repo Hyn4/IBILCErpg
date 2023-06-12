@@ -1,13 +1,15 @@
 
 public class Inventario {
-    private Item habilidadeEquipada;
+    private Habilidade habilidadeEquipada;
 
-    public Item getHabilidadeEquipada() {
+    public Habilidade getHabilidadeEquipada() {
         return habilidadeEquipada;
     }
 
     public Inventario(){
-        habilidadeEquipada = new Item();
+        habilidadeEquipada = new PedacoDePau();
+        // habilidadeEquipada.setContadorRecarga(0);
+        System.out.println(habilidadeEquipada.getContadorRecarga());
     }
 
     
