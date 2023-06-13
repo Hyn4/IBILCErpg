@@ -14,7 +14,7 @@ public class CombatManager{
             turno = true;
         }
     
-        while(jogador.estaVivo() && adversario.estaVivo()){
+        while(jogador.getVivo() && adversario.getVivo()){
             if(turno){
                 acao = jogador.turnoNoCombate();
                 adversario.reacaoInimigo(acao);
@@ -25,7 +25,7 @@ public class CombatManager{
 
 
         //SE COLOCAR A OPCAO DE CORRER, TEM QUE MUDAR ESSE IF TAMBEM!!!
-        if(jogador.estaVivo()){
+        if(jogador.getVivo()){
             //mensagem: "jogador" venceu a luta!
             jogador.receberExperiencia(adversario.getExpRecompensa());
         }else{

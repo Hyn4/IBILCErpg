@@ -4,6 +4,15 @@ public class Player extends Personagem{
     
 
     //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
+    public Player(String nome, String tag, boolean vivo, int vidaMaxima, int vidaAtual, int ataqueBase, int defesaBase, int velocidade, float multiplicadorAtaque, float multiplicadorDefesa, int experiencia, int nivel) {
+        super(nome, tag, vivo, vidaMaxima, vidaAtual, ataqueBase, defesaBase, velocidade, multiplicadorAtaque, multiplicadorDefesa);
+        this.experiencia = experiencia;
+        this.nivel = nivel;
+    }
+    public Player() {
+        super();
+    }
+
 
     public int getExperiencia() {
         return experiencia;
