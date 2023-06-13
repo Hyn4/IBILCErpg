@@ -20,6 +20,7 @@ public class CombatManager{
         while(jogador.estaVivo() && adversario.estaVivo()){
             System.out.println("Vida do jogador: " + jogador.getVidaAtual());
             System.out.println("Vida do adversario: " + adversario.getVidaAtual());
+            System.out.println("--------------------------------------------------------------------------------------");
 
             if(turno){
                 acao = jogador.turnoNoCombate();
@@ -36,10 +37,10 @@ public class CombatManager{
 
         //SE COLOCAR A OPCAO DE CORRER, TEM QUE MUDAR ESSE IF TAMBEM!!!
         if(jogador.estaVivo()){
-            //mensagem: "jogador" venceu a luta!
+            System.out.println("JOGADOR VENCEU!!!");
             jogador.receberExperiencia(adversario.getExpRecompensa());
         }else{
-            //jogador perdeu a luta.
+            System.out.println("Jogador foi eliminado.");
         }
 
         //retornar ao mapa

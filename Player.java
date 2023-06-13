@@ -20,6 +20,7 @@ public class Player extends Personagem{
         this.setVidaAtual(20);
         this.setVelocidade(10);
         this.setVivo(true);
+        this.setDebuffDano(1f);
     }
 
     public Inventario getInventario() {
@@ -46,13 +47,15 @@ public class Player extends Personagem{
         switch(op){
             case "1":
                 turno.setT("ATAQUE");
-                turno.setV((getAtaqueBase()*getMultiplicadorAtaque()));
+                turno.setV((getAtaqueBase()*getMultiplicadorAtaque())*getDebuffDano());
                 System.out.println(turno.getT());
+                setDebuffDano(1f);
                 break;
             case "2":
                 turno.setT("DEFESA");
                 turno.setV(0.75f-(getNivel()/50));
                 System.out.println(turno.getT());
+                setDebuffDano(1f);
                 break;
             case "3":
                 if(inventario.getHabilidadeEquipada().checarTempoDeRecarga()){
@@ -63,6 +66,7 @@ public class Player extends Personagem{
                 turno.setT("HABILIDADE");
                 System.out.println(turno.getT());
                 acaoPropria(turno);
+                setDebuffDano(1f);
                 break;
         }
 
@@ -167,6 +171,8 @@ public class Player extends Personagem{
             case "ATAQUE": 
                 receberDano((Float)acao.getV());
                 break;
+            case "DEFESA":
+                setDebuffDano((Float)acao.getV());
         }
         
     }

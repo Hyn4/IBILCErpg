@@ -1,6 +1,6 @@
 public class Inimigo extends Personagem{
     private int expRecompensa;
-    private float debuffDano;//reduz o dano do proximo ataque do inimigo quando o jogador usa a acao defesa
+    private int contadorTurnos;
 
     public Inimigo(){
         this.setAtaqueBase(5);
@@ -14,13 +14,7 @@ public class Inimigo extends Personagem{
         this.setDebuffDano(1);
         this.expRecompensa = 10;
     }
-
-    public float getDebuffDano() {
-        return debuffDano;
-    }
-    public void setDebuffDano(float debuffDano) {
-        this.debuffDano = debuffDano;
-    }
+    
     public int getExpRecompensa() {
         return expRecompensa;
     }
@@ -30,6 +24,24 @@ public class Inimigo extends Personagem{
         System.out.println("Dano ao adversario: " + super.receberDano(dano));
         return 0;
     }
+
+    public Acao<String,Object> inimigoAtacar(){
+        Acao<String,Object> turno = new Acao<String,Object>();
+        turno.setT("ATAQUE");
+        turno.setV((getAtaqueBase()*getMultiplicadorAtaque())*getDebuffDano());
+        setDebuffDano(1);
+        System.out.println(turno.getT());
+        return turno;
+    }
+
+    public Acao<String,Object> inimigoDefender(){
+        Acao<String,Object> turno = new Acao<String,Object>();
+        turno.setT("DEFESA");
+        turno.setV(0.5f);
+        setDebuffDano(1);
+        System.out.println(turno.getT());
+        return turno;
+    } 
 
     public void reacaoInimigo(Acao<String,Object> acao){
         switch(acao.getT()){
@@ -64,6 +76,20 @@ public class Inimigo extends Personagem{
             
         }
     }
+
+    public void incrementarContadorTurnos(){
+        setContadorTurnos(getContadorTurnos()+1);
+    }
+
+    public int getContadorTurnos() {
+        return contadorTurnos;
+    }
+
+    public void setContadorTurnos(int contadorTurnos) {
+        this.contadorTurnos = contadorTurnos;
+    }
+
+    
 
    
 }

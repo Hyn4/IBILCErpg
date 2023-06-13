@@ -1,11 +1,28 @@
 public class Personagem {
     private String nome;
     private String tag;
-    
     public boolean vivo;
-
     private int vidaMaxima;
     private int vidaAtual;
+    private int ataqueBase = 1;
+    private int defesaBase;
+    private int velocidade;
+    private float multiplicadorAtaque;
+    private float multiplicadorDefesa;
+    private float debuffDano;
+
+
+   
+
+    public int receberDano(float danoPuro){
+        
+        float dano = danoPuro - ((Float)(getDefesaBase()*getMultiplicadorDefesa()));
+        if(dano < 0 ) dano = 0f;
+        setVidaAtual(getVidaAtual()-Math.round(dano));
+        return Math.round(dano);
+    }
+
+
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
@@ -15,14 +32,6 @@ public class Personagem {
     public void setVelocidade(int velocidade) {
         this.velocidade = velocidade;
     }
-    private int ataqueBase = 1;
-    private int defesaBase;
-    private int velocidade;
-
-    private float multiplicadorAtaque;
-    private float multiplicadorDefesa;
-
-
     public String getNome() {
         return nome;
     }
@@ -65,21 +74,20 @@ public class Personagem {
     public int getVelocidade() {
         return velocidade;
     }
+    public float getDebuffDano() {
+        return debuffDano;
+    }
+    public void setDebuffDano(float debuffDano) {
+        this.debuffDano = debuffDano;
+    }
+
+
     public boolean estaVivo(){
         if(getVidaAtual()<=0) setVivo(false);
         return vivo;
     }
-
     public Acao<String,Object> turnoNoCombate(){
         return null;
-    }
-
-    public int receberDano(float danoPuro){
-        
-        float dano = danoPuro - ((Float)(getDefesaBase()*getMultiplicadorDefesa()));
-        if(dano < 0 ) dano = 0f;
-        setVidaAtual(getVidaAtual()-Math.round(dano));
-        return Math.round(dano);
     }
 
 }
