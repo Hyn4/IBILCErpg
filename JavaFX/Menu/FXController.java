@@ -6,12 +6,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -22,8 +20,7 @@ public class FXController {
     public Button creditosButton;
     @FXML
     public Button sairButton;
-    @FXML
-    private Label welcomeText;
+
 
     @FXML
     protected void jogarButtonClick(ActionEvent event) throws IOException{
