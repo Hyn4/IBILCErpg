@@ -37,18 +37,24 @@ public class FXMapaController {
 
     @FXML
     protected void salvarButtonClick(ActionEvent event) throws IOException{
-            Parent combate = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Combate/Combate.fxml")));
-            Scene combateScene = new Scene(combate);
+        Parent save = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Save/Save.fxml")));
+        Scene saveScene = new Scene(save);
 
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(combateScene);
-            window.setTitle("Combate");
-            window.show();
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(saveScene);
+        window.setTitle("Save");
+        window.show();
 
     }
 
-    protected void irButtonClick(){
+    protected void irButtonClick(ActionEvent event)throws IOException{
+        Parent combate = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("JavaFX/Combate/Combate.fxml")));
+        Scene combateScene = new Scene(combate);
 
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(combateScene);
+        window.setTitle("Combate");
+        window.show();
 
     }
 
