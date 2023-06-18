@@ -1,0 +1,11 @@
+
+
+
+.bodybg{
+    -fx-background-image:url("Files/AleardoManacero.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 200 200;
+    -fx-background-position: top center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+

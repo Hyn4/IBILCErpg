@@ -1,0 +1,37 @@
+Sprites para fazer:
+
+    ICONE DO JOGO
+
+    cursos:
+        Matematica
+        Biologia
+        Quimica
+        Fisica
+        Letras
+        Pedagogia
+        Traducao
+        Engenharida de Alimentos
+    
+    Outros adversarios:
+        Alejandro
+        Reitor
+    
+    Itens:
+        RU
+        Xepa
+        -...
+    
+    Locais:
+        DCCE
+        Arboreto
+        Bloco C
+        LABS
+        Bloco A 
+        Coreto
+        Piramide
+
+    UI:
+        Botao atacar
+        Botao defender
+        Botao habilidade
+        Botao item

@@ -1,0 +1,7 @@
+nome:
+data:
+horario:
+
+equipamento:
+//level?
+//vida?

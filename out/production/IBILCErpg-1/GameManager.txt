@@ -1,0 +1,10 @@
+Primeira tela: MENU 
+
+    botao de sair encerra o programa
+    botao de creditos abre uma nova tela, que exibe o texto dos creditos e possui um botao de voltar, que volta para a tela original
+    botao JOGAR inicia o jogo()
+
+funcao para iniciar o jogo recebera um numero de progresso, que guarda ate onde o jogador foi no jogo, se for 0, comeca do comeco.
+no comeco do jogo() exibe o comeco da historia e desativa todos os botoes ate acabar a exposition (passa pra frente com o enter), quando acabar o tutorial, o jogador sera livre para
+enfrentar qualquer inimigo, que serao botoes no mapa, que quando clicados, farao acoes diferentes (ou texto antes do combate, ou combate depois texto, ou texto combate texto), outros
+botoes no mapa ou so terao texto, ou terao texto e um item.

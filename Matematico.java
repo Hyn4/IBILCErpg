@@ -11,20 +11,25 @@ public class Matematico extends Inimigo {
     public Matematico(){
         super();
         setAux(0);
+        setTag("MATEMATICO");
         setDanoAnterior(0);
         setNome("Matematico");
-        setAtaqueBase(0);
-        setDefesaBase(3);
+        setDefesaBase(6);
     }
 
     @Override
     public Acao<String,Object> turnoNoCombate(){
+        return inimigoAtacar();
+    }
+
+    @Override
+    public Acao<String,Object> inimigoAtacar(){
         int dano = proximoDano();
         setAux(danoAnterior);
         setDanoAnterior(dano);
+        System.out.println("ATAQUE");
         return new Acao<String,Object>("DANO_REAL",dano);
     }
-
 
 
 
