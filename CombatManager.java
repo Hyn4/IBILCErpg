@@ -7,7 +7,6 @@ public class CombatManager{
     public CombatManager(Player jogador, Inimigo adversario) {
         this.jogador = jogador;
         this.adversario = adversario;
-        iniciarCombate();
     }
 
     public void iniciarCombate(){

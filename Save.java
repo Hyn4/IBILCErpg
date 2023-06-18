@@ -29,8 +29,6 @@ public class Save extends Player implements Serializable{
 
                 Player usuario = (Player) objectIn.readObject();
                 Player player = new Player();//novo jogador que vai receber o save
-
-                player.setTag(usuario.getTag());
                 player.setVivo(usuario.getVivo());
                 player.setVidaMaxima(usuario.getVidaMaxima());
                 player.setVidaAtual(usuario.getVidaAtual());

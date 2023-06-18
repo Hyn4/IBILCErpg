@@ -10,6 +10,14 @@ import java.util.Objects;
 
 public class MainJogo extends Application {
 
+    Player jogador = new Player();
+    Biologo adversario = new Biologo();
+    Traduteiro adversario2 = new Traduteiro();
+    Traduteiro adversario3 = new Traduteiro();
+    CombatManager combate = new CombatManager(jogador, adversario);
+    CombatManager combate2 = new CombatManager(jogador, adversario2);
+
+
     @Override
     public void start(@NotNull Stage stage) throws IOException {
         Font.loadFont(getClass().getResourceAsStream("Files/8_bit_hud.ttf"), 78);

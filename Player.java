@@ -7,30 +7,19 @@ public class Player extends Personagem{
     private Scanner input = new Scanner(System.in);
     
     public Player(){
-        this.setNome("Jogador");
+        super("Jogador",true,0,0,1,1,
+                10, 1,1,1f);
         this.setNivel(1);
         this.inventario = new Inventario();
         this.setExperiencia(0);
+
         this.setAtaqueBase(7 + (getNivel()-1));
         this.setDefesaBase(3 + (getNivel()-1));
-        this.setMultiplicadorAtaque(1);
-        this.setMultiplicadorDefesa(1);
         this.setVidaMaxima(10 + 10*getNivel());
         this.setVidaAtual(10 + 10*getNivel());
-        this.setVelocidade(10);
-        this.setVivo(true);
-        this.setDebuffDano(1f);
     }
 
     //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
-    public Player(String nome, String tag, boolean vivo, int vidaMaxima, int vidaAtual, int ataqueBase, int defesaBase, int velocidade, float multiplicadorAtaque, float multiplicadorDefesa, int experiencia, int nivel) {
-        super(nome, tag, vivo, vidaMaxima, vidaAtual, ataqueBase, defesaBase, velocidade, multiplicadorAtaque, multiplicadorDefesa);
-        this.experiencia = experiencia;
-        this.nivel = nivel;
-    }
-    public Player() {
-        super();
-    }
 
 
     public int getExperiencia() {
@@ -223,16 +212,5 @@ public class Player extends Personagem{
     public Inventario getInventario() {
         return inventario;
     }
-    public int getExperiencia() {
-        return experiencia;
-    }
-    public void setExperiencia(int experiencia) {
-        this.experiencia = experiencia;
-    }
-    public int getNivel() {
-        return nivel;
-    }
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
+
 }

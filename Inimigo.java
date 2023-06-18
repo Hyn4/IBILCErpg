@@ -2,21 +2,15 @@ public class Inimigo extends Personagem{
     private int expRecompensa;
     private int contadorTurnos;
 
+
     public Inimigo(){
-        this.setAtaqueBase(5);
-        this.setDefesaBase(2);
-        this.setMultiplicadorAtaque(1);
-        this.setMultiplicadorDefesa(1);
-        this.setVelocidade(5);
-        this.setVidaMaxima(20);
-        this.setVidaAtual(20);
-        this.setVivo(true);
-        this.setDebuffDano(1);
+        super("Inimigo",true,20,20,5,2,
+                5, 1,1,1);
         this.expRecompensa = 10;
-    public Inimigo(String nome, String tag, boolean vivo, int vidaMaxima, int vidaAtual, int ataqueBase, int defesaBase, int velocidade, float multiplicadorAtaque, float multiplicadorDefesa, int expRecompensa) {
-        super(nome, tag, vivo, vidaMaxima, vidaAtual, ataqueBase, defesaBase, velocidade, multiplicadorAtaque, multiplicadorDefesa);
-        this.expRecompensa = expRecompensa;
+        this.contadorTurnos = 0;
     }
+
+
 
     public int getExpRecompensa() {
         return expRecompensa;
@@ -94,10 +88,6 @@ public class Inimigo extends Personagem{
 
     public void setContadorTurnos(int contadorTurnos) {
         this.contadorTurnos = contadorTurnos;
-    }
-
-    public int getExpRecompensa() {
-        return expRecompensa;
     }
 
    

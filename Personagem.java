@@ -1,6 +1,5 @@
 public class Personagem {
     private String nome;
-    private String tag;
     private boolean vivo;
     private int vidaMaxima;
     private int vidaAtual;
@@ -11,6 +10,18 @@ public class Personagem {
     private float multiplicadorDefesa;
     private float debuffDano;
 
+    public Personagem(String nome, boolean vivo, int vidaMaxima, int vidaAtual, int ataqueBase, int defesaBase, int velocidade, float multiplicadorAtaque, float multiplicadorDefesa, float debuffDano) {
+        this.nome = nome;
+        this.vivo = vivo;
+        this.vidaMaxima = vidaMaxima;
+        this.vidaAtual = vidaAtual;
+        this.ataqueBase = ataqueBase;
+        this.defesaBase = defesaBase;
+        this.velocidade = velocidade;
+        this.multiplicadorAtaque = multiplicadorAtaque;
+        this.multiplicadorDefesa = multiplicadorDefesa;
+        this.debuffDano = debuffDano;
+    }
 
     public int receberDano(float danoPuro){
         
@@ -50,9 +61,6 @@ public class Personagem {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
@@ -66,11 +74,6 @@ public class Personagem {
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {this.nome = nome;}
-    public String getTag() {
-        return tag;
-    }
-    public void setTag(String tag) {this.tag = tag;}
     public int getVidaMaxima() {
         return vidaMaxima;
     }
