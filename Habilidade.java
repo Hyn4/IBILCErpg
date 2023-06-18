@@ -1,28 +1,8 @@
+
 public class Habilidade extends Item {
     private Acao<String,Object> efeito;
     private int tempoDeRecarga;
     private int contadorRecarga;
-
-    public void setEfeito(Acao<String, Object> efeito) {
-        this.efeito = efeito;
-    }
-
-    public int getTempoDeRecarga() {
-        return tempoDeRecarga;
-    }
-
-    public void setTempoDeRecarga(int tempoDeRecarga) {
-        this.tempoDeRecarga = tempoDeRecarga;
-    }
-
-    public int getContadorRecarga() {
-        return contadorRecarga;
-    }
-
-    public void setContadorRecarga(int contadorRecarga) {
-        this.contadorRecarga = contadorRecarga;
-    }
-
     
     public void ativarRecarga(){
         setContadorRecarga(tempoDeRecarga+1);
@@ -46,5 +26,28 @@ public class Habilidade extends Item {
 
     public Acao<String,Object> getEfeito(){
         return efeito;
+    }
+
+    
+
+
+    public void setEfeito(Acao<String, Object> efeito) {
+        this.efeito = efeito;
+    }
+
+    public int getTempoDeRecarga() {
+        return tempoDeRecarga;
+    }
+
+    public void setTempoDeRecarga(int tempoDeRecarga) {
+        this.tempoDeRecarga = tempoDeRecarga;
+    }
+
+    public int getContadorRecarga() {
+        return contadorRecarga;
+    }
+
+    public void setContadorRecarga(int contadorRecarga) {
+        this.contadorRecarga = contadorRecarga;
     }
 }

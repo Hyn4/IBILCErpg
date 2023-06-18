@@ -2,6 +2,7 @@ public class Biologo extends Inimigo {
     
     public Biologo(){
         super();
+        setNome("Biologo");
     }
 
 

@@ -2,6 +2,7 @@ public class Traduteiro extends Inimigo {
 
     public Traduteiro(){
         super();
+        setNome("Traduteiro");
         setAtaqueBase(8);
         setDefesaBase(3);
     }

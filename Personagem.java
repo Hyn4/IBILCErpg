@@ -12,8 +12,6 @@ public class Personagem {
     private float debuffDano;
 
 
-   
-
     public int receberDano(float danoPuro){
         
         float dano = danoPuro - ((Float)(getDefesaBase()*getMultiplicadorDefesa()));
@@ -22,7 +20,39 @@ public class Personagem {
         return Math.round(dano);
     }
 
+    public int receberCura(float cura){
+        if(getVidaAtual() + Math.round(cura) >= getVidaMaxima()){
+            setVidaAtual(getVidaMaxima());
+            System.out.println( getNome() + " foi curado em " + Math.round(cura) + " pontos de vida");
+            return Math.round(cura);
+        }else{
+            setVidaAtual(getVidaAtual() + Math.round(cura));
+            System.out.println( getNome() + " foi curado em " + Math.round(cura) + " pontos de vida");
+            return Math.round(cura);
+        }
+        
+    }
 
+    public boolean estaVivo(){
+        if(getVidaAtual()<=0) setVivo(false);
+        return vivo;
+    }
+    public Acao<String,Object> turnoNoCombate(){
+        return null;
+    }
+
+
+
+
+
+
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
@@ -79,15 +109,6 @@ public class Personagem {
     }
     public void setDebuffDano(float debuffDano) {
         this.debuffDano = debuffDano;
-    }
-
-
-    public boolean estaVivo(){
-        if(getVidaAtual()<=0) setVivo(false);
-        return vivo;
-    }
-    public Acao<String,Object> turnoNoCombate(){
-        return null;
     }
 
 }

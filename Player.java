@@ -6,38 +6,23 @@ public class Player extends Personagem{
     private Inventario inventario;
     private Scanner input = new Scanner(System.in);
     
-
-    //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
     public Player(){
-        this.nivel = 1;
+        this.setNome("Jogador");
+        this.setNivel(1);
         this.inventario = new Inventario();
-        this.experiencia = 0;
-        this.setAtaqueBase(7);
-        this.setDefesaBase(3);
+        this.setExperiencia(0);
+        this.setAtaqueBase(7 + (getNivel()-1));
+        this.setDefesaBase(3 + (getNivel()-1));
         this.setMultiplicadorAtaque(1);
         this.setMultiplicadorDefesa(1);
-        this.setVidaMaxima(20);
-        this.setVidaAtual(20);
+        this.setVidaMaxima(10 + 10*getNivel());
+        this.setVidaAtual(10 + 10*getNivel());
         this.setVelocidade(10);
         this.setVivo(true);
         this.setDebuffDano(1f);
     }
 
-    public Inventario getInventario() {
-        return inventario;
-    }
-    public int getExperiencia() {
-        return experiencia;
-    }
-    public void setExperiencia(int experiencia) {
-        this.experiencia = experiencia;
-    }
-    public int getNivel() {
-        return nivel;
-    }
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
+   
    
     @Override
     public Acao<String,Object> turnoNoCombate(){
@@ -58,16 +43,22 @@ public class Player extends Personagem{
                 setDebuffDano(1f);
                 break;
             case "3":
-                if(inventario.getHabilidadeEquipada().checarTempoDeRecarga()){
-                    turno.setV(usarHabilidade());
-                }else{
+                if(getInventario().getHabilidadeEquipada().getEfeito().getT() == "PASSIVA"){
+                    System.out.println("A habilidade equipada é passiva, não é necessário ativá-la.");
                     return turnoNoCombate();
+                }else{
+                    if(getInventario().getHabilidadeEquipada().checarTempoDeRecarga()){
+                        turno.setV(usarHabilidade());
+                    }else{
+                        return turnoNoCombate();
+                    }
+                    turno.setT("HABILIDADE");
+                    System.out.println(turno.getT() + ": " + getInventario().getHabilidadeEquipada().getNome());
+                    acaoPropria(turno);
+                    setDebuffDano(1f);
+                    break;
                 }
-                turno.setT("HABILIDADE");
-                System.out.println(turno.getT());
-                acaoPropria(turno);
-                setDebuffDano(1f);
-                break;
+                
         }
 
             
@@ -87,7 +78,11 @@ public class Player extends Personagem{
 
         switch(turno.getT()){
             case "HABILIDADE":
-                //chama outra funcao pra n desorganizar
+                Acao<String,Object> efeito = getInventario().getHabilidadeEquipada().getEfeito();
+                switch((String)efeito.getT()){
+                    case "VAMPIRISMO":
+                        receberCura((float)efeito.getV());
+                }
                 break;
             case "ITEM":
                 if((String)turno.getV() == "RU"){
@@ -112,13 +107,26 @@ public class Player extends Personagem{
         Acao<String,Object> efeito =  inventario.getHabilidadeEquipada().getEfeito();
         inventario.getHabilidadeEquipada().ativarRecarga();
         if(efeito.getT() == "DANO") return efeito;
+        if(efeito.getT() == "VAMPIRISMO") return efeito;
         //SE O EFEITO FOR PROPRIO, ESSA FUNCAO TEM Q RETORNAR NULO!!!
     
         return null;
     }
 
-    public void ativarHabilidadePassiva(){//N TA FEITO
+    public void ativarHabilidadePassiva(){
 
+        if(getInventario().getHabilidadeEquipada().getEfeito().getT() == "PASSIVA"){
+            String efeito = (String)getInventario().getHabilidadeEquipada().getEfeito().getV();
+
+            switch(efeito){
+                case "CURA":
+                    System.out.println("Habilidade Passiva: Cura");
+                    receberCura(getVidaMaxima()/20);
+                    System.out.println("--------------------------------------------------------------------------------------");
+                    break;
+            }
+        }
+        
     }
 
     public void receberExperiencia(int experienca){
@@ -155,7 +163,7 @@ public class Player extends Personagem{
     }
     private int SubirDeNivelVida(){
         int maisVida = this.getVidaMaxima();
-        maisVida++;
+        maisVida = 10 + 10*getNivel();
         setVidaMaxima(maisVida);
         return maisVida;
     }
@@ -182,4 +190,26 @@ public class Player extends Personagem{
         return Math.round(dano);
     }
    
+
+
+
+
+
+
+
+    public Inventario getInventario() {
+        return inventario;
+    }
+    public int getExperiencia() {
+        return experiencia;
+    }
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+    public int getNivel() {
+        return nivel;
+    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 }

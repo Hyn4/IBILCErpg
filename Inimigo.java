@@ -15,9 +15,7 @@ public class Inimigo extends Personagem{
         this.expRecompensa = 10;
     }
     
-    public int getExpRecompensa() {
-        return expRecompensa;
-    }
+  
 
     @Override
     public int receberDano(float dano){
@@ -65,7 +63,9 @@ public class Inimigo extends Personagem{
                         case "REDUCAO_DE_DANO":
                             setMultiplicadorAtaque((Float)efeitoHabilidade.getV());
                             break;
-                        //mais habilidades
+                        case "VAMPIRISMO":
+                            receberDano((Float)efeitoHabilidade.getV());
+                            break;
                     }
                 }
             
@@ -89,7 +89,9 @@ public class Inimigo extends Personagem{
         this.contadorTurnos = contadorTurnos;
     }
 
-    
+    public int getExpRecompensa() {
+        return expRecompensa;
+    }
 
    
 }
