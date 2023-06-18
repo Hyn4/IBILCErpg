@@ -1,7 +1,7 @@
 public class Personagem {
     private String nome;
     private String tag;
-    public boolean vivo;
+    private boolean vivo;
     private int vidaMaxima;
     private int vidaAtual;
     private int ataqueBase = 1;
@@ -56,6 +56,7 @@ public class Personagem {
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
+    public boolean getVivo() { return vivo;}
     public void setVidaAtual(int vidaAtual) {
         this.vidaAtual = vidaAtual;
     }
@@ -65,9 +66,11 @@ public class Personagem {
     public String getNome() {
         return nome;
     }
+    public void setNome(String nome) {this.nome = nome;}
     public String getTag() {
         return tag;
     }
+    public void setTag(String tag) {this.tag = tag;}
     public int getVidaMaxima() {
         return vidaMaxima;
     }

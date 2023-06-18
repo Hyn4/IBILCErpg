@@ -13,6 +13,13 @@ public class Inimigo extends Personagem{
         this.setVivo(true);
         this.setDebuffDano(1);
         this.expRecompensa = 10;
+    public Inimigo(String nome, String tag, boolean vivo, int vidaMaxima, int vidaAtual, int ataqueBase, int defesaBase, int velocidade, float multiplicadorAtaque, float multiplicadorDefesa, int expRecompensa) {
+        super(nome, tag, vivo, vidaMaxima, vidaAtual, ataqueBase, defesaBase, velocidade, multiplicadorAtaque, multiplicadorDefesa);
+        this.expRecompensa = expRecompensa;
+    }
+
+    public int getExpRecompensa() {
+        return expRecompensa;
     }
     
   

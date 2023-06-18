@@ -16,7 +16,7 @@ public class CombatManager{
             turno = true;
         }
         
-        while(jogador.estaVivo() && adversario.estaVivo()){
+        while(jogador.getVivo() && adversario.getVivo()){
             System.out.println("Vida do jogador: " + jogador.getVidaAtual());
             System.out.println("Vida do adversario: " + adversario.getVidaAtual());
             System.out.println("--------------------------------------------------------------------------------------");
@@ -36,7 +36,7 @@ public class CombatManager{
         jogador.desativarHabilidadePassiva();
 
         //SE COLOCAR A OPCAO DE CORRER, TEM QUE MUDAR ESSE IF TAMBEM!!!
-        if(jogador.estaVivo()){
+        if(jogador.getVivo()){
             System.out.println("JOGADOR VENCEU!!!");
             jogador.receberExperiencia(adversario.getExpRecompensa());
         }else{
