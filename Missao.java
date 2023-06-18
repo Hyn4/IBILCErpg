@@ -1,11 +1,11 @@
-public class Missao<E extends Inimigo, R extends Item> {
+public class Missao<R extends Item> {
 
 
     public boolean done(){
         if((Integer)n<=0){
             return true;
         }else{
-            System.out.println("Ainda falta derrotar " + getN() + " " + getE().getTag() + " para completar a missão.");
+            System.out.println("Ainda falta derrotar " + getN() + " " + getInimigo() + " para completar a missão.");
         } return false;
     }
 
@@ -15,11 +15,11 @@ public class Missao<E extends Inimigo, R extends Item> {
     private String nome;
     private int n;
     private int total;
-    private E e;
+    private String inimigo;
     private R r;
     
-    public Missao(E e, R r, String nome, int total) {
-        this.e = e;
+    public Missao(String inimigo, R r, String nome, int total) {
+        this.inimigo = inimigo;
         this.r = r;
         this.nome = nome;
         this.total = total;
@@ -32,11 +32,11 @@ public class Missao<E extends Inimigo, R extends Item> {
     public void setN(int n) {
         this.n = n;
     }
-    public E getE() {
-        return e;
+    public String getInimigo() {
+        return inimigo;
     }
-    public void setE(E e) {
-        this.e = e;
+    public void setE(String e) {
+        this.inimigo = e;
     }
     public R getR() {
         return r;
