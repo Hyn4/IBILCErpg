@@ -1,6 +1,7 @@
 public class Inimigo extends Personagem{
     private int expRecompensa;
     private int contadorTurnos;
+    private String tag;
 
 
     public Inimigo(){
@@ -9,14 +10,6 @@ public class Inimigo extends Personagem{
         this.expRecompensa = 10;
         this.contadorTurnos = 0;
     }
-
-
-
-    public int getExpRecompensa() {
-        return expRecompensa;
-    }
-    
-  
 
     @Override
     public int receberDano(float dano){
@@ -71,9 +64,6 @@ public class Inimigo extends Personagem{
                 }
             
                 break;
-            case "ITEM":
-                //n faz nada eu acho
-                break;
             
         }
     }
@@ -89,6 +79,24 @@ public class Inimigo extends Personagem{
     public void setContadorTurnos(int contadorTurnos) {
         this.contadorTurnos = contadorTurnos;
     }
+
+    public int getExpRecompensa() {
+        return expRecompensa;
+    }
+
+    public void setExpRecompensa(int expRecompensa) {
+        this.expRecompensa = expRecompensa;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    
 
    
 }

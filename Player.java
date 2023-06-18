@@ -5,6 +5,7 @@ public class Player extends Personagem{
     private int nivel; //muda a forca e defesa base do jogador
     private Inventario inventario;
     private Scanner input = new Scanner(System.in);
+    private MissaoManager missoes = new MissaoManager();
     
     public Player(){
         super("Jogador",true,0,0,1,1,
@@ -19,9 +20,6 @@ public class Player extends Personagem{
         this.setVidaAtual(10 + 10*getNivel());
     }
 
-    //falta o constructor do jogador (comeca com 1 nos atributos base, nivel e multiplicadores, 0 de experiencia)
-
-
     public int getExperiencia() {
         return experiencia;
     }
@@ -34,8 +32,6 @@ public class Player extends Personagem{
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-   
-   
     @Override
     public Acao<String,Object> turnoNoCombate(){
         Acao<String,Object> turno = new Acao<String,Object>();
@@ -70,17 +66,18 @@ public class Player extends Personagem{
                     setDebuffDano(1f);
                     break;
                 }
-                
+            case "4":
+                turno.setT("ITEM");
+                turno.setV("EFEITO");//EFEITO DO ITEM
+
+                acaoPropria(turno);
         }
 
             
 
 
 
-            // turno.setT("ITEM");
-            // turno.setV("EFEITO");//EFEITO DO ITEM
-
-            // acaoPropria(turno);
+            
         
 
         return turno;
@@ -193,6 +190,11 @@ public class Player extends Personagem{
                 break;
             case "DEFESA":
                 setDebuffDano((Float)acao.getV());
+                break;
+            case "DANO_REAL":
+                setVidaAtual(getVidaAtual() - (int)acao.getV());
+                System.out.println("Dano ao jogador: " + acao.getV());
+                break;
         }
         
     }
@@ -202,15 +204,21 @@ public class Player extends Personagem{
         return Math.round(dano);
     }
    
-
-
-
-
-
-
-
     public Inventario getInventario() {
         return inventario;
     }
 
+    public void setInventario(Inventario inventario) {
+        this.inventario = inventario;
+    }
+
+    public MissaoManager getMissoes() {
+        return missoes;
+    }
+
+    public void setMissoes(MissaoManager missoes) {
+        this.missoes = missoes;
+    }
+
+    
 }

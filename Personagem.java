@@ -3,7 +3,7 @@ public class Personagem {
     private boolean vivo;
     private int vidaMaxima;
     private int vidaAtual;
-    private int ataqueBase = 1;
+    private int ataqueBase;
     private int defesaBase;
     private int velocidade;
     private float multiplicadorAtaque;
