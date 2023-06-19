@@ -1,3 +1,4 @@
+import com.sun.tools.javac.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -6,10 +7,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Scanner;
+
 
 public class MainJogo extends Application {
 
-    
+    CombatManager combate;
+    private static Scanner input = new Scanner(System.in);
 
 
     @Override
@@ -28,13 +32,39 @@ public class MainJogo extends Application {
 
     public static void main(String[] args){
         //launch();
+        MainJogo main = new MainJogo();
         Player jogador = new Player();
-        Biologo adversario = new Biologo();
-        Traduteiro adversario2 = new Traduteiro();
-        Matematico adversario3 = new Matematico();
-        CombatManager combate = new CombatManager(jogador, adversario);
-        CombatManager combate2 = new CombatManager(jogador, adversario2);
-        CombatManager combate3 = new CombatManager(jogador, adversario3);
+        Alejandro coordenador = new Alejandro();
+        jogador.receberMissao(coordenador.primeiraMissao);
+        jogador.receberMissao(coordenador.segundaMissao);
+        jogador.receberMissao(coordenador.terceiraMissao);
+
+        int op = -1;
+        while (op != 0){
+             System.out.println("1 - Biologo , 2 - Tradutor, 3 - Matematico, 4 - inventario");
+             op = input.nextInt();
+             main.opcoes(op,jogador);
+        }
+
+    }
+
+    public void opcoes(int op, Player jogador){
+        switch (op){
+            case 1:
+                combate = new CombatManager(jogador, new Biologo());
+                break;
+            case 2 :
+                combate = new CombatManager(jogador, new Traduteiro());
+                break;
+            case 3:
+                combate = new CombatManager(jogador, new Matematico());
+                break;
+            case 4:
+                jogador.getInventario().printInventario();
+                System.out.println("Escolha qual item quer equipar");
+                int i = input.nextInt();
+                jogador.getInventario().equiparHabilidade(i);
+        }
     }
 
 

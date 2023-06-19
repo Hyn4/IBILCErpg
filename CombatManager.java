@@ -38,10 +38,12 @@ public class CombatManager{
         if(jogador.getVivo()){
             System.out.println("--------------------------------------------------------------------------------------");
             System.out.println("JOGADOR VENCEU!!!");
-            jogador.getMissoes().atualizarMissoes(adversario);
+            jogador.getInventario().adicionarHabilidade(jogador.getMissoes().completarMissao(jogador.getMissoes().atualizarMissoes(adversario)));
             jogador.receberExperiencia(adversario.getExpRecompensa());
         }else{
             System.out.println("Jogador foi eliminado.");
+            jogador.setVidaAtual(jogador.getVidaMaxima());
+            jogador.setVivo(true);
         }
 
         //retornar ao mapa

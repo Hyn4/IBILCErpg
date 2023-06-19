@@ -16,14 +16,15 @@ public class Missao<R extends Item> {
     private int n;
     private int total;
     private String inimigo;
+
+    private String requisitou;
     private R r;
-    
-    public Missao(String inimigo, R r, String nome, int total) {
+
+    public Missao(String inimigo, R r, String nome, int n) {
         this.inimigo = inimigo;
         this.r = r;
         this.nome = nome;
-        this.total = total;
-        this.n = total;
+        this.n = n;
     }
 
     public int getN() {
@@ -44,22 +45,18 @@ public class Missao<R extends Item> {
     public void setR(R r) {
         this.r = r;
     }
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public int getTotal() {
-        return total;
+    public String getRequisitou() {
+        return requisitou;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setRequisitou(String requisitou) {
+        this.requisitou = requisitou;
     }
-    
-
 }

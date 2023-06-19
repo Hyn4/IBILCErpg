@@ -203,6 +203,10 @@ public class Player extends Personagem{
         System.out.println("Dano ao jogador: " + super.receberDano(dano));
         return Math.round(dano);
     }
+
+    public void receberMissao(Missao<? extends Habilidade> missao){
+        missoes.adicionarMissao(missao);
+    }
    
     public Inventario getInventario() {
         return inventario;
